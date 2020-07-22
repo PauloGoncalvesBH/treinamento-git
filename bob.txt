@@ -1,1 +1,3 @@
 # criado um novo arquivoo
+
+oi eu sou o bob e sou novo aqui na aula de git kkkk
