@@ -695,7 +695,7 @@ A figura abaixo mostra um `cherry-pick` de um conjunto de commits em vez de um �
 
 ## Reescrevendo a história
 
-> Estou me repetindo agora, mas você ainda se lembra de [`rebase`](# rebasing) bem o suficiente, certo? Caso contrário, volte rapidamente para essa seção antes de continuar aqui, pois usaremos o que já sabemos enquanto aprendemos a mudar o histórico!
+> Estou me repetindo agora, mas você ainda se lembra de [`rebase`](#rebasing) bem o suficiente, certo? Caso contrário, volte rapidamente para essa seção antes de continuar aqui, pois usaremos o que já sabemos enquanto aprendemos a mudar o histórico!
 
 Como você sabe, um `commit` contém basicamente suas alterações, uma mensagem e algumas outras coisas.
 
@@ -730,7 +730,7 @@ Agora vamos alterar (`amend`) o que fizemos nesse commit.
 
 Execute `git add Bob.txt` para enviar as alterações para a _Staging Area_ e, em seguida, `git commit --amend`.
 
-O que acontece a seguir é o desenrolamr do commit, as novas alterações da _Staging Area_ adicionadas no commit existente e a abertura do editor da mensagem de commit.
+O que acontece a seguir é o desenrolar do commit, as novas alterações da _Staging Area_ adicionadas no commit existente e a abertura do editor da mensagem de commit.
 
 No editor, você verá a mensagem de commit anterior.
 Sinta-se livre para alterá-lo para algo melhor.
