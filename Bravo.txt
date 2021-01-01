@@ -1,3 +1,5 @@
 Oii! Eu sou Bravo, 
 
 Tô só tentando entender de uma melhor forma como usar Git. 
+
+Só tentando mesmo.
