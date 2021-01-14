@@ -1,4 +1,4 @@
-Oii! Eu sou Bravo, 
+Oii! Eu sou Bravo, estou aqui há um tempo.
 
 Tô só tentando entender de uma melhor forma como usar Git. 
 
