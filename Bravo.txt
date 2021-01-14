@@ -1,5 +1,4 @@
-Oii! Eu sou Bravo, estou aqui há um tempo.
-
+Oii! Eu sou Bravinho. Estou aqui há um tempo.
 Tô só tentando entender de uma melhor forma como usar Git. 
 
 Só tentando mesmo.
