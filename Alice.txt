@@ -1,3 +1,5 @@
 Oi! Eu sou Alice. Sou um arquivo que alguém adicionou neste repositório há um bom tempo.
 
 Isso é um arquivo que eu não criei, mas faz parte do melhor entendimento.
+
+Olá!
