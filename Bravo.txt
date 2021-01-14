@@ -2,3 +2,6 @@ Oii! Eu sou Bravinho. Estou aqui há um tempo.
 Tô só tentando entender de uma melhor forma como usar Git. 
 
 Só tentando mesmo.
+
+Parei na parte de:
+// Atualizando o Dev Environment com as alterações remotas
