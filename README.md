@@ -47,7 +47,7 @@ Vamos começar!
     - [Rebase interativo](#rebase-interativo)
     - [História pública, por que você não deve reescrevê-la e como fazer isso com segurança](#história-pública-por-que-você-não-deve-reescrevê-la-e-como-fazer-isso-com-segurança)
 - [Lendo a história](#lendo-a-história)
-- [Treinando comandos git](#treinando--comandos-git)
+- [Treinando comandos git](#treinando-comandos-git)
 ---
 
 ## Visão geral
