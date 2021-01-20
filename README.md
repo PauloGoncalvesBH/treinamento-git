@@ -63,7 +63,7 @@ O _Development Environment_ é o que possui na sua máquina local.
 As três partes são seu _Working Directory_, a _Staging Area_ e o _Local Repository_. Aprenderemos mais sobre quando começarmos a usar o **git**.
 
 Escolha um local em que prefere colocar o seu _Development Environment_.
-Basta ir para a sua pasta pessoal ou para onde preferir e assim colocar os seus projetos. Não será necessário criar uma nova pasta para o seu _Dev Environment_.
+Basta ir para a sua pasta pessoal ou para onde preferir e assim colocar os seus projetos. Não será necessário criarmos uma pasta para o seu _Dev Environment_.
 
 ## Obtendo um _Remote Repository_
 
@@ -71,35 +71,35 @@ Agora queremos pegar um _Remote Repository_ e colocar o que está nele, na sua m
 
 Sugiro que usemos o repositório [github.com/PauloGoncalvesBH/treinamento-git](https://github.com/PauloGoncalvesBH/treinamento-git) no nosso treinamento.
 
-> Para fazer isso use o comando `git clone https://github.com/PauloGoncalvesBH/treinamento-git.git`
+> Para fazer isso use o comando: `git clone https://github.com/PauloGoncalvesBH/treinamento-git.git`
 > 
-> Mas, ao seguir este tutorial, você precisará enviar as alterações feitas no seu _Dev Environment_ de volta ao _Remote Repository_, e o github não permite que alguém faça isso no repositório de outra pessoa, por isso o melhor a fazer é criar um [_fork_](https://guides.github.com/activities/forking). Há um botão para fazer isso no canto superior direito desta página.
+> Mas, ao seguir este tutorial, precisaremos enviar as alterações feitas no seu _Dev Environment_ de volta ao _Remote Repository_, e o github não permite que alguém faça isso no repositório de outra pessoa, por isso o melhor a fazer é criar um [_fork_](https://guides.github.com/activities/forking). Há um botão para fazer isso no canto superior direito desta página.
 
 Agora que já possui uma cópia do meu _Remote Repository_ na sua conta do github por ter feito o _fork_, é hora de colocar isso na sua máquina.
 
 Para isso usamos `git clone https://github.com/{SEU USUÁRIO}/treinamento-git.git`
 
 Como podem ver no diagrama abaixo, isso copia o _Remote Repository_ em dois lugares, no seu _Working Directory_ e o _Local Repository_.
-Agora é possível ver como o git é um "controle de versão _distribuído_". O _Local Repository_ é uma cópia do _Remote_ e age exatamente como ele. A única diferença é que você não o compartilha com ninguém.
+Agora é possível ver como o git é um "controle de versão _distribuído_". O _Local Repository_ é uma cópia do _Remote_ e age exatamente como ele. A única diferença é que não compartilhamos com ninguém.
 
-O que o `git clone` também faz é, criar uma nova pasta no local onde executamos o comando. Deve haver uma pasta `treinamento-git` agora. Abra-a.
+O que o `git clone` também faz é, criarmos uma pasta no local onde executamos o comando. Deve haver uma pasta `treinamento-git` agora. Abra-a.
 
 <!-- clone.png -->
 ![Clonando o repositório remoto](https://user-images.githubusercontent.com/29241659/87479277-92e57680-c601-11ea-9f8f-a9082fb24e90.png)
 
 ## Adicionando coisas novas
 
-Alguém já colocou um arquivo chamado `Alice.txt` no _Remote Repository_. É meio solitário lá, então criaremos um novo arquivo e chamaremos de `Bob.txt`.
+Alguém já colocou um arquivo chamado `Alice.txt` no _Remote Repository_. É meio solitário lá, então criamos um arquivo e chamaremos de `Bob.txt`.
 
 O que acabamos de fazer foi adicionar um arquivo no seu _Working Directory_.
-Existem dois tipos de arquivos no seu _Working Directory_: Arquivos _tracked_, que o git conhece, e _untracked_, arquivos que o git (ainda) não conhece.
+Existem dois tipos de arquivos no seu _Working Directory_: arquivos _tracked_, que o git conhece, e _untracked_, arquivos que o git (ainda) não conhece.
 
 <!-- tracking_files.png -->
 ![Rastreando arquivos](https://user-images.githubusercontent.com/29241659/87481065-f91fc880-c604-11ea-8c30-97a963fb0533.png)
 
 Para ver o que está acontecendo no seu _Working Directory_ execute `git status`, que informará em que branch você está, se o seu _Local Repository_ é diferente do _Remote_ e os arquivos _tracked_ e _untracked_.
 
-Você verá que `Bob.txt` não é rastreado (_untracked_) e o `git status` até lhe diz como mudar isso.
+Veremos que o `Bob.txt` não é rastreado (_untracked_) e o `git status` até lhe diz como mudar isso.
 Na figura abaixo, podemos notar o que acontece quando seguimos a dica e executamos `git add Bob.txt`: Você adicionou o arquivo à _Staging Area_, onde coletaremos todas as alterações que desejamos incluir no _Repository_.
 
 <!-- add.png -->
@@ -136,7 +136,7 @@ Na realidade, ele contém algum texto, mas `Bob.txt` não, então vamos mudar is
 Se você executar o `git status` agora, verá que o `Bob.txt` está modificado (`modified`).
 Nesse estado as alterações estão apenas no seu _Working Directory_.
 
-Se desejarmos ver o que mudou em seu _Working Directory_, podemos executar o comando `git diff` para vermos a seguinte saída:
+Se desejarmos ver o que mudou no seu _Working Directory_, podemos executar o comando `git diff` para vermos a seguinte saída:
 
 ```Diff
 diff --git a/Bob.txt b/Bob.txt
@@ -233,7 +233,7 @@ Agora que temos certeza de que fizemos a alteração que queríamos, vá em fren
 
 ## Ramificação (Branch)
 
-Outra coisa que torna o git excelente é o fator de que trabalhar com ramificações é realmente uma parte fácil e essencial de como trabalhar com o git.
+Outra coisa que torna o git excelente é o fator de que trabalhar com ramificações é realmente uma parte fácil e essencial de como usar com o git.
 
 De fato, trabalhamos em uma branch desde que começamos.
 
@@ -250,13 +250,13 @@ Não se preocupe, retornaremos a todas essas coisas com mais detalhes quando pre
 
 No momento queremos criar uma branch para fazermos algumas alterações. Talvez queira apenas tentar algo por conta própria e não mexer com o estado de trabalho na sua branch _master_, ou não pode empurrar (`push`) para a _master_.
 
-As branches ficam no _Local_ e no _Remote Repository_. Quando criamos uma nova branch, o conteúdo dessa branch será uma cópia de qualquer ramificação em que trabalhe no momento.
+As branches ficam no _Local_ e no _Remote Repository_. Quando criamos uma branch, o conteúdo dessa branch será uma cópia de qualquer ramificação em que trabalhe no momento.
 
 Vamos fazer algumas alterações no `Alice.txt`! Que tal colocarmos algum texto na segunda linha?
 
 Queremos compartilhar essa mudança, mas não colocá-la na _master_ imediatamente, então vamos criar uma ramificação para ela usando `git branch <branch name>`.
 
-Para criarmos uma nova branch chamada `change_alice`, podemos executar o comando: `git branch change_alice`.
+Para criarmos uma branch chamada `change_alice`, podemos executar o comando: `git branch change_alice`.
 
 Isso adiciona a nova branch ao _Local Repository_.
 
@@ -265,7 +265,7 @@ Enquanto o seu _Working Directory_ e _Staging Area_ realmente não se importam c
 Pensamos em _branches_ no git como ponteiros, apontando para uma série de confirmações. Quando fazemos um `commit`, adicionamos o que está a apontar no momento.
 
 Apenas adicionar uma branch, isso não a leva diretamente para lá, apenas cria um ponteiro.
-De fato, o estado em que o seu _Local Repository_ está atualmente, pode ser visto como outro ponteiro, chamado _HEAD_, que aponta para qual branch e commit estamos atualmente.
+De fato, o estado em que o seu _Local Repository_ está no momento, pode ser visto como outro ponteiro, chamado _HEAD_, que aponta para qual branch e commit estamos atualmente.
 
 Se isso parecer complicado, os diagramas abaixo ajudarão a esclarecer um pouco as coisas:
 
@@ -296,7 +296,7 @@ To push the current branch and set the remote as upstream, use
 
 Mas não queremos fazer isso às cegas. Estamos aqui para entender o que realmente acontece. Então, o que são _upstream branches_ e _remotes_?
 
-Lembra quando clonamos o _Remote Repository_ há um tempo? Nesse ponto, ele não continha apenas este tutorial e `Alice.txt`, mas na verdade, duas ramificações.
+Lembra quando clonamos o _Remote Repository_ há um tempo? Nesse ponto, ele não continha apenas este tutorial e `Alice.txt` mas, na verdade, duas ramificações.
 
 Quando copiamos as coisas no _Remote Repository_ para o seu _Dev Environment_, algumas etapas (extras) ocorreram "embaixo do capô".
 
@@ -340,9 +340,9 @@ Como já fizemos o checkout na _master_, agora podemos executar `git merge chang
 
 Como não existem outras alterações conflitando em `Alice.txt` e não mudamos nada na _master_, isso ocorrerá sem problemas na chamada 'fusão' _fast forward_ (rápida).
 
-Nos diagramas abaixo, podemos notar que isso significa apenas que o ponteiro _master_ podemos simplesmente ser avançado para onde o _change_alice_ está.
+Nos diagramas abaixo, notamos que isso significa apenas que o ponteiro _master_ pode simplesmente ser avançado para onde o _change_alice_ está.
 
-O primeiro diagrama mostra o estado antes de nossas mesclagens (`merge`). A _master_ ainda está no commit que era originalmente e, na outra branch, fizemos mais um commit.
+O primeiro diagrama mostra o estado antes das nossas mesclagens (`merge`). A _master_ ainda está no commit que era originalmente e, na outra branch, fizemos mais um commit.
 
 <!-- before_ff_merge.png -->
 ![Antes do merge fast forward](https://user-images.githubusercontent.com/29241659/87479561-1dc67100-c602-11ea-9faf-c4b7f17525c2.png)
@@ -372,24 +372,24 @@ Se você voltar para a master (`git checkout master`) e executar `git merge chan
 
 O novo commit envia as alterações que fizemos na branch `change_alice` para a _master_.
 
-Como você deve se lembrar, as revisões no git não são apenas uma captura instantânea de seus arquivos, mas também contêm informações de onde elas vieram. Cada `commit` tem um ou mais commits pais. Nosso novo commit de `merge` possui como seus pais o último commit da _master_ e o commit que fizemos na branch `change_alice`.
+Devemos lembrar, as revisões no git não são apenas uma captura instantânea dos seus arquivos, mas também contêm informações de onde elas vieram. Cada `commit` tem um ou mais commits pais. Os nossos novos commits de `merge` possuem, como os seus pais, os últimos commits da _master_ e o commit que fizemos na branch `change_alice`.
 
 ### Resolvendo conflitos
 
-Até agora nossas mudanças não interferiram entre si.
+Até agora as nossas mudanças não interferiram entre si.
 
-Vamos criar um conflito e depois solucioná-lo.
+Vamos criar um conflito para depois solucionarmos.
 
-Crie e faça o checkout de uma nova branch. Você sabe como, mas talvez tente usar o `git checkout -b` para facilitar sua vida.
-Eu chamei a minha de `branch_do_bobby`.
+Crie e faça o `checkout` de uma nova branch. Sabemos como, mas talvez vale usar o `git checkout -b` para facilitar a nossa vida.
+Chamei a minha branch de: `branch_do_bobby`.
 
-Nessa branch faremos uma alteração no `Bob.txt`.
-A primeira linha ainda deve ser `Oi! Eu sou o Bob. Eu sou novo aqui.` Mude isso para `Oi! Eu sou o Bobby. Eu sou novo aqui.`
+Nessa branch, faremos uma alteração no `Bob.txt`.
+A primeira linha ainda deve ser `Oi! Eu sou o Bob. Eu sou novo aqui.` Mude isso para: `Oi! Eu sou o Bobby. Eu sou novo aqui.`
 
 Faça o `commit` da sua alteração e volte (`checkout`) para a branch _master_. Aqui vamos mudar a mesma linha para `Oi!! Eu sou o Bob. Estou aqui há um tempo.` e realizar um `commit` da alteração.
 
-Agora é hora de fazer o `merge` da branch `branch_do_bobby` com a _master_.
-Ao tentar isso, você verá a seguinte mensagem:
+Agora é hora de fazermos o `merge` da branch `branch_do_bobby` com a _master_.
+Ao tentar isso, veremos a seguinte mensagem:
 
 ```ShellSession
 Auto-merging Bob.txt
@@ -398,13 +398,13 @@ Automatic merge failed; fix conflicts and then commit the result.
 ```
 A mesma linha mudou nas duas branches, e o git não pode lidar com isso sozinho.
 
-Se você executar `git status`, receberá todas as instruções úteis de como continuar.
+Se executarmos o `git status`, receberemos todas as instruções úteis de como continuar.
 
-Primeiro, temos que resolver o conflito manualmente.
+Primeiro, vamos resolver o conflito manualmente.
 
-> Para um conflito fácil como este seu editor de texto favorito se sairá bem. Para mesclar arquivos grandes com muitas alterações, uma ferramenta mais poderosa tornará sua vida muito mais fácil, e eu suponho que sua IDE favorita venha com ferramentas de controle de versão e uma bela visualização para mesclagem.
+> Para um conflito fácil como este, o seu editor de texto favorito se sairá bem. Para mesclar arquivos grandes com muitas alterações, uma ferramenta mais poderosa tornará a sua vida muito mais fácil e, suponho que sua IDE favorita venha com ferramentas de controle de versão e uma bela visualização para mesclagem.
 
-Se você abrir `Bob.txt`, verá algo semelhante a isso (eu trunquei o que quer que tenhamos colocado na segunda linha antes):
+Se abrirmos o `Bob.txt`, veremos algo próximo a isso (eu trunquei o que quer que tenhamos colocado na segunda linha antes):
 
 ```Diff
 <<<<<<< HEAD
@@ -415,104 +415,104 @@ Oi! Eu sou o Bobby. Eu sou novo aqui.
 [... tanto faz o que você colocou na linha 2]
 ```
 
-No topo, você vê o que mudou em `Bob.txt` no HEAD atual. Abaixo, o que mudou na branch que estamos mesclando.
+No topo, veremos o que mudou em `Bob.txt` no HEAD atual. Abaixo, o que mudou na branch em que mesclamos.
 
-Para resolver o conflito manualmente, você só precisa ter um conteúdo razoável e sem as linhas especiais que o git introduziu no arquivo.
+Para resolver o conflito manualmente, só precisamos ter um conteúdo razoável e sem as linhas especiais que o git introduziu no arquivo.
 
-Então vá em frente e mude o arquivo para algo assim:
+Então vamos em frente para mudarmos o arquivo para algo assim:
 
 ```
 Oi! Eu sou o Bobby. Estou aqui há um tempo.
 [...]
 ```
 
-A partir daqui, o que estamos fazendo é exatamente o que faríamos para qualquer alteração.
-Nós enviamos para _stage_ quando executamos `add Bob.txt`, e então fazemos o `commit`.
+A partir daqui, o que fazemos é exatamente o que faríamos para qualquer alteração.
+Enviamos para _stage_ quando executamos `add Bob.txt`, e então fazemos o `commit`.
 
 Já conhecemos o commit das alterações que fizemos para resolver o conflito. É o _merge commit_ que está sempre presente ao mesclar.
 
-Se alguma vez você perceber no meio da resolução de conflitos que realmente não deseja seguir com o `merge`, você pode simplesmente cancelar (`abort`) executando o comando `git merge --abort`.
+Se alguma vez você perceber no meio da resolução de conflitos que realmente não deseja seguir com o `merge`, podemos simplesmente cancelar (`abort`) executando o comando `git merge --abort`.
 
 ## Rebasing
 
 Git tem outra maneira limpa de integrar mudanças entre duas branches, que é chamada de `rebase`.
 
-Ainda lembramos que uma branch é sempre baseada em outra. Quando você a cria, você ramifica de algum lugar.
+Ainda lembramos que uma branch é sempre baseada em outra. Quando você a cria, ramificamos de algum lugar.
 
 No nosso exemplo de mesclagem simples, ramificamos a _master_ em um commit específico e, em seguida, fizemos commit de algumas mudanças no _master_ e na branch `change_alice`.
 
-Quando uma ramificação está divergindo daquela em que se baseia e você deseja integrar as alterações mais recentes em sua ramificação atual, o `rebase` oferece uma maneira mais limpa de fazer isso do que uma `mesclagem` faria.
+Quando uma ramificação se diverge daquela em que se baseia e desejamos integrar as alterações mais recentes na sua ramificação atual, o `rebase` oferece uma maneira mais limpa de fazer isso do que uma `mesclagem` faria.
 
 Como vimos, um `merge` introduz um _merge commit_ no qual os dois históricos são integrados novamente.
 
-Visto de forma simples, o rebasing muda apenas o ponto da história (o commit) no qual sua ramificação se baseia.
+Visto de forma simples, o rebasing muda apenas o ponto da história (o commit) na qual a sua ramificação se baseia.
 
-Para tentar isso, vamos primeiro fazer o checkout da branch _master_ novamente e depois criar uma nova branch baseada nela.
+Para tentar isso, vamos primeiro fazer o `checkout` da branch _master_ novamente e depois criarmos uma nova branch baseada nela.
 Chamei a minha branch de `add_patrick`, adicionei um novo arquivo chamado `Patrick.txt` e fiz um commit com a mensagem 'Adicionar Patrick'.
 
-Após o commit, volte para a _master_, faça uma alteração e faça o commit. Eu adicionei mais algum texto em `Alice.txt`.
+Após o commit, volte para a _master_, faça uma alteração e commite. Adicionamos mais algum texto em `Alice.txt`.
 
-Como em nosso exemplo de mesclagem, a história dessas duas branches divergem em um ancestral comum, como você pode ver no diagrama abaixo.
+Como no nosso exemplo de mesclagem, a história dessas duas branches divergem num ancestral comum, como podemos ver no diagrama abaixo.
 
 <!-- before_rebase.png -->
 ![Histórico antes do rebase](https://user-images.githubusercontent.com/29241659/87479563-1ef79e00-c602-11ea-9e08-fc1d323d51dc.png)
 
-Agora vamos executar `checkout add_patrick` novamente, pegar a mudança que foi feita na _master_ e enviar para a branch em que estamos trabalhando!
+Agora vamos executar `checkout add_patrick` novamente, pegar a mudança que foi feita na _master_ e enviar para a branch em que trabalhamos!
 
-Quando executamos `git rebase master`, baseamos nossa ramificação `add_patrick` no estado atual da branch _master_.
+Quando executamos `git rebase master`, baseamos a nossa ramificação `add_patrick` no estado atual da branch _master_.
 
-A saída desse comando nos dá uma boa dica do que está acontecendo:
+A saída desse comando nos dá uma boa dica do que acontece:
 
 ```ShellSession
 First, rewinding head to replay your work on top of it...
 Applying: Adicionar Patrick
 ```
 
-Como lembramos, _HEAD_ é o ponteiro para o commit atual em que estamos em nosso _Dev Environment_.
+Como lembramos, _HEAD_ é o ponteiro para o commit atual em que estamos no nosso _Dev Environment_.
 
-Está apontando para o mesmo lugar que `add_patrick` antes do rebase começar. Para o rebase, ele volta primeiro ao ancestral comum, antes de passar para o head atual da branch que queremos basear.
+Apontamos para o mesmo lugar que `add_patrick` antes do rebase começar. Para o rebase, ele volta primeiro ao ancestral comum, antes de passar para o head atual da branch que queremos basear.
 
 Portanto, o _HEAD_ passa do commit _0cfc1d2_ para o commit  _7639f4b_ que está no head da _master_.
 Então rebase aplica cada commit que fizemos na nossa branch `add_patrick`.
 
-Para ser mais exato o que o _git_ faz depois de retornar o _HEAD_ de volta ao ancestral comum dos branches, é armazenar partes de cada commit que você fez na branch (o `diff` das mudanças, o texto do commit, autor, etc. .).
+Para ser mais exato o que o _git_ faz depois de retornar o _HEAD_ de volta ao ancestral comum dos branches, é armazenar partes de cada commit que fizemos na branch (o `diff` das mudanças, o texto do commit, autor, etc...)
 
-Depois disso, ele faz um `checkout` do último commit da branch na qual você está reestruturando e, em seguida, aplica cada uma das alterações armazenadas como __um novo commit__ no topo dela.
+Depois disso, ele faz um `checkout` do último commit da branch na qual reestruturamos e, em seguida, aplica cada uma das alterações armazenadas como __um novo commit__ no topo dela.
 
-Portanto, em nossa visão simplificada original, assumiríamos que após o `rebase` o commit _0cfc1d2_ não aponta mais para o ancestral comum em sua história, mas aponta para o head da _master_.
-De fato, o commit _0cfc1d2_ não existe mais, e a branch `add_patrick` começa com um novo commit _0ccaba8_, que tem o commit mais recente de _master_ como seu ancestral.
-Nós fizemos parecer que a branch `add_patrick` foi baseada na _master_ atual, e não em uma versão mais antiga, mas ao fazê-lo reescrevemos o histórico da branch.
-No final deste tutorial, aprenderemos um pouco mais sobre como reescrever o histórico e quando é apropriado e inapropriado fazê-lo.
+Portanto, na nossa visão simplificada original, assumiríamos que após o `rebase` o commit _0cfc1d2_ não aponta mais para o ancestral comum na sua história, mas sim para o head da _master_.
+De fato, o commit _0cfc1d2_ não existe mais, e a branch `add_patrick` começa com um novo commit _0ccaba8_, que tem o commit mais recente de _master_ como o seu ancestral.
+Fizemos parecer que a branch `add_patrick` foi baseada na _master_ atual, e não numa versão mais antiga, mas ao fazê-lo reescrevemos o histórico da branch.
+No final deste tutorial, aprenderemos um pouco mais sobre como reescrever o histórico e quando é apropriado e inapropriado fazer.
 
 <!-- rebase.png -->
 ![Histórico após rebase](https://user-images.githubusercontent.com/29241659/87479673-451d3e00-c602-11ea-9fc8-7a31b4395703.png)
 
-`Rebase` é uma ferramenta incrivelmente poderosa quando você está trabalhando em sua própria branch de desenvolvimento, que é baseada em uma branch compartilhada, por exemplo, a _master_.
+`Rebase` é uma ferramenta incrivelmente poderosa quando trabalhamos na sua própria branch de desenvolvimento, que é baseada em uma branch compartilhada, por exemplo, a _master_.
 
-Usando o rebase, você pode garantir que integra frequentemente as alterações que outras pessoas fazem e enviam para _master_, mantendo um histórico linear limpo que permite fazer uma mesclagem de avanço rápido (`fast-forward merge`) quando chegar a hora de colocar seu trabalho na branch compartilhada.
+Usando o rebase, podemos garantir que integra frequentemente as alterações que outras pessoas fazem e enviam para _master_, mantendo um histórico linear limpo que permite fazer uma mesclagem de avanço rápido (`fast-forward merge`) quando chegar a hora de colocar o seu trabalho na branch compartilhada.
 
-Manter um histórico linear também torna a leitura ou a visualização (tente `git log --graph` ou dê uma olhada na visualização de branch do _GitHub_ ou _GitLab_) do log de commits muito mais agradável do que ter um histórico repleto de _merge commits_, geralmente usando o texto padrão.
+Manter um histórico linear também torna a leitura ou a visualização (tente `git log --graph`, ou dê uma olhada na visualização de branch do _GitHub_, ou _GitLab_) do log de commits muito mais agradável do que ter um histórico repleto de _merge commits_, geralmente usando o texto padrão.
 
 ### Resolvendo conflitos
 
-Assim como em um `merge`, você pode ter conflitos se você tiver dois commits alterando as mesmas partes de um arquivo.
+Assim como em um `merge`, podem existir conflitos se tivermos dois commits alterando as mesmas partes de um arquivo.
 
-No entanto, quando você encontra um conflito durante um `rebase` você não o corrige em um _merge commit_ extra, mas pode simplesmente resolvê-lo no commit que está sendo aplicado no momento.
-Novamente, baseando suas alterações diretamente no estado atual da branch original.
+No entanto, quando encontramos um conflito durante um `rebase`, não o corrigimos em um _merge commit_ extra, mas podemos simplesmente resolvê-lo no commit que será aplicado no momento.
+Novamente, baseando as suas alterações diretamente no estado atual da branch original.
 
-Resolver conflitos de `rebase` é muito parecido com o que você faria para um `merge`, portanto, consulte a seção se você não tiver mais certeza de como fazê-lo.
+Resolver conflitos de `rebase` é muito parecido com o que faríamos para um `merge`, portanto, consulte a seção se não tiver certeza de como fazê-lo.
 
-A única distinção é que, como você não está introduzindo um _merge commit_, não há necessidade de fazer um `commit` da sua resolução. Simplesmente execute `add` das alterações, enviando para _Staging Environment_, e depois execute `git rebase --continue`. O conflito será resolvido no commit que estava sendo aplicado.
+A única distinção é que, como não introduzimos um _merge commit_, não há necessidade de fazer um `commit` da sua resolução. Simplesmente execute `add` das alterações, enviando para _Staging Environment_, e depois execute `git rebase --continue`. O conflito será resolvido no commit que será aplicado.
 
-Assim como no merge, você sempre pode parar e cancelar tudo o que fez até o momento executando `git rebase --abort`.
+Assim como no merge, podemos parar e cancelar tudo o que fez até o momento executando: `git rebase --abort`.
 
 ## Atualizando o _Dev Environment_ com as alterações remotas
 
 Até agora, aprendemos apenas como fazer e compartilhar alterações.
 
-Isso se encaixa no que você fará se estiver trabalhando por conta própria, mas geralmente haverá muitas pessoas que fazem o mesmo e queremos que as alterações sejam alteradas do _Remote Repository_ para o nosso _Dev Environment_ de alguma forma.
+Isso se encaixa no que faríamos se trabalhássemos por conta própria, mas geralmente haverá muitas pessoas que fazem o mesmo e queremos que as alterações sejam modificadas do _Remote Repository_ para o nosso _Dev Environment_ de alguma forma.
 
-Como já faz algum tempo, vamos dar uma outra olhada nos componentes do git:
+Como já faz algum tempo, vamos olhar novamente nos componentes do **git**:
 
 <!-- components.png -->
 ![componentes do git](https://user-images.githubusercontent.com/29241659/87479630-359df500-c602-11ea-92f0-301124069b82.png)
@@ -522,7 +522,7 @@ Assim como o seu _Dev Environment_, todos os outros que trabalham no mesmo códi
 <!-- many_dev_environments.png -->
 ![muitos dev environments](https://user-images.githubusercontent.com/29241659/87479662-40588a00-c602-11ea-8531-c2e03659d372.png)
 
-Todos esses _Dev Environments_ possuem suas próprias alterações em _Working directory_ e _Staging Area_, que em algum momento geram um novo `commit` no _Local Repository_ e são finalmente empurradas (`push`) para o _Remote Repository_.
+Todos esses _Dev Environments_ possuem as suas próprias alterações em _Working directory_ e _Staging Area_, que em algum momento geram um novo `commit` no _Local Repository_ e são finalmente empurradas (`push`) para o _Remote Repository_.
 
 No nosso exemplo, usaremos as ferramentas on-line oferecidas pelo _GitHub_ para simular alguém fazendo alterações no _remote_ enquanto trabalhamos.
 
@@ -533,22 +533,22 @@ Encontre o botão de editar o arquivo, faça uma alteração e crie o commit atr
 <!-- github.png -->
 ![editar o github](https://user-images.githubusercontent.com/29241659/87483591-739f1700-c60a-11ea-8d27-10c372f2cbb2.png)
 
-Neste repositório adicionei uma alteração remota ao `Alice.txt` em uma branch chamada `fetching_changes_sample`, mas na sua versão do repositório você pode, é claro, alterar o arquivo na `master`.
+Neste repositório adicionei uma alteração remota ao `Alice.txt` em uma branch chamada `fetching_changes_sample`, mas na sua versão do repositório podemos, é claro, alterar o arquivo na `master`.
 
 ### Buscando as alterações (Fetch)
 
-Ainda lembramos que quando você executa `git push`, sincroniza as alterações feitas no _Local Repository_ no _Remote Repository_.
+Ainda lembramos que quando executamos: `git push`, sincronizamos as alterações feitas no _Local Repository_ para o _Remote Repository_.
 
-Para obter as alterações feitas no _Remote_ no seu _Local Repository_, você usa o `git fetch`.
+Para obter as alterações feitas no _Remote_ no seu _Local Repository_, usamos o: `git fetch`.
 
 Isso obtém qualquer alteração do remoto - commits e branches - no seu _Local Repository_.
 
-Observe que, neste ponto, as alterações ainda não estão integradas nas branches locais e, portanto, no _Working Directory_ e na _Staging Area_.
+Observe que, neste ponto, as alterações ainda não estão integradas nas branches locais, portanto, no _Working Directory_ e na _Staging Area_.
 
 <!-- fetch.png -->
 ![Fazendo fetch das alterações](https://user-images.githubusercontent.com/29241659/87479640-38004f00-c602-11ea-8d76-8c7371fd6c7e.png)
 
-Se você executar `git status` agora, verá outro ótimo exemplo de comandos git dizendo exatamente o que está acontecendo:
+Se você executar `git status` agora, verá outro ótimo exemplo de comandos git dizendo exatamente o que acontenceu:
 
 ```ShellSession
 > git status
@@ -561,8 +561,8 @@ Your branch is behind 'origin/fetching_changes_sample' by 1 commit, and can be f
 
 Como não temos nenhuma alteração em _working_ ou _staged_, podemos executar o `git pull` agora para obter as alterações do _Remote Repository_ até a nossa área de trabalho.
 
-> Puxar implicitamente também faz `fetch` do _Remote Repository_, mas as vezes é uma boa idéia fazer um `fetch` por si só.
-> Por exemplo, quando você deseja sincronizar qualquer nova branch _remote_, ou quando deseja garantir que seu _Local Repository_ esteja atualizado antes de fazer uma `git rebase` em algo como `origin/master`.
+> Puxar implicitamente também faz `fetch` do _Remote Repository_, mas geralmente é uma boa ideia fazermos uns `fetch` por si só.
+> Exemplo, quando desejamos sincronizar qualquer nova branch _remote_, ou quando queremos garantir que o seu _Local Repository_ esteja atualizado antes de fazer uma `git rebase` em algo como `origin/master`.
 
 <!-- pull.png -->
 ![Puxando mudanças](https://user-images.githubusercontent.com/29241659/87479670-42224d80-c602-11ea-98a7-68659f60f976.png)
@@ -571,7 +571,7 @@ Antes de puxarmos (`pull`), vamos alterar um arquivo localmente para ver o que a
 
 Vamos alterar o arquivo `Alice.txt` no nosso _Working Directory_!
 
-Agora, se você tentar fazer um `git pull`, verá o seguinte erro:
+Agora, se tentarmos fazer um `git pull`, verá o seguinte erro:
 
 ```ShellSession
 > git pull
@@ -582,39 +582,39 @@ Please commit your changes or stash them before you merge.
 Aborting
 ```
 
-Você não pode executar `pull` enquanto existirem modificações nos arquivos no _Working Directory_ que também são alteradas pelos commits que você está puxando (`pull`).
+Náo poderemos executar `pull` enquanto existirem modificações nos arquivos no _Working Directory_ que também são alteradas pelos commits que puxamos (`pull`).
 
 Embora uma maneira de contornar isso seja adicioná-las (`add`) ao _Staging Environment_ e criar o `commit`, este é um bom momento para aprender sobre outra excelente ferramenta, o `git stash`.
 
 ### Escondendo as alterações (Stash)
 
-Se a qualquer momento você tiver alterações locais que ainda não deseja colocar em um commit, ou deseja armazenar em algum lugar enquanto tenta alguma forma diferente de resolver um problema, você pode esconder essas alterações.
+Se a qualquer momento tivermos alterações locais que ainda não deseja colocar em um commit, ou desejamos armazenar em algum lugar enquanto tenta alguma forma diferente de resolver um problema, podemos esconder essas modificações.
 
-Um `git stash` é basicamente uma pilha de alterações nas quais você armazena as alterações no _Working Directory_.
+Um `git stash` é basicamente uma pilha de alterações nas quais armazenamos as modificações no _Working Directory_.
 
-Os comandos que você mais irá utilizar são o `git stash`, que coloca qualquer modificação feita no _Working Directory_ em stash (ocultada), e o `git stash pop`, que recebe a última alteração que foi salva em stash e a aplica ao _Working Directory_ novamente.
+Os comandos que mais iremos utilizar são o `git stash`, que coloca qualquer modificação feita no _Working Directory_ em stash (ocultada), e o `git stash pop`, que recebe a última alteração que foi salva em stash e a aplica ao _Working Directory_ novamente.
 
 Assim como os comandos de pilha com o nome, o `git stash pop` remove a última alteração escondida antes de aplicá-la novamente.
-Se você não deseja remover as alterações do stash no momento de aplicá-las, pode usar o `git stash apply`.
+Se não deseja remover as alterações do stash no momento de aplicá-las, pode-se usar o `git stash apply`.
 
-Para inspecionar o seu `stash` atual, você pode usar `git stash list` para listar as entradas individuais, e `git stash show` para mostrar as alterações da última entrada no `stash`.
+Para inspecionar o seu `stash` atual, podemos usar `git stash list` para listar as entradas individuais, e `git stash show` para mostrar as alterações da última entrada no `stash`.
 
-> Outro comando interessante é o `git stash branch {BRANCH NAME}`, que cria um branch a partir do HEAD no momento em que você armazenou as alterações e aplica as alterações armazenadas nessa branch.
+> Outro comando interessante é o `git stash branch {BRANCH NAME}`, que cria um branch a partir do HEAD no momento em que armazenamos as alterações e aplica as modificações salvas nessa branch.
 
-Agora que sabemos sobre `git stash`, vamos executá-lo para remover nossas alterações locais em `Alice.txt` do _Working Directory_ para que possamos prosseguir e puxar (`git pull`) as alterações que fizemos no Github.
+Agora que sabemos sobre `git stash`, vamos executar para removermos as nossas alterações locais em `Alice.txt` do _Working Directory_ para que possamos prosseguir e puxar (`git pull`) as alterações que fizemos no Github.
 
 Depois disso, vamos executar `git stash pop` para recuperar as alterações.
-Como tanto o commit que puxamos quanto a alteração que ocultamos (`stash`) modificam `Alice.txt`, você terá que resolver o conflito da mesma forma que faria em um `merge` ou `rebase`. Quando terminar, adicione (`add`) e _commite_ a alteração.
+Como tanto o commit que puxamos quanto a alteração que ocultamos (`stash`) modificam `Alice.txt`, teremos que resolver o conflito da mesma forma que faria em um `merge` ou `rebase`. Quando terminar, adicione (`add`) e _commite_ a alteração.
 
 ### Puxando (Pull) com conflitos
 
-Agora que entendemos como buscar (`fetch`) e puxar (`pull`) as mudanças remotas em nosso _Dev Environment_, é hora de criar alguns conflitos!
+Agora que entendemos como buscar (`fetch`) e puxar (`pull`) as mudanças remotas no nosso _Dev Environment_, é hora de criar alguns conflitos!
 
 Não mande `push` do commit que mudou `Alice.txt` e volte ao seu _Remote Repository_ em [github.com](https://www.github.com).
 
 Lá vamos mudar `Alice.txt` novamente e _commitar_ a alteração.
 
-Agora existem dois conflitos entre nossos _Local_ e _Remote Repositories_.
+Agora existem dois conflitos entre o nosso _Local_ e _Remote Repositories_.
 
 Não se esqueça de executar o `git fetch` para ver a mudança remota sem puxá-la (`pull`) imediatamente.
 
@@ -630,83 +630,83 @@ and have 1 and 1 different commits each, respectively.
 
 Além disso, alteramos o mesmo arquivo em ambos os commits para introduzir um conflito de `merge` que precisaremos resolver.
 
-Quando você executa `git pull` enquanto existe uma diferença entre o _Local_ e o _Remote Repository_, exatamente a mesma coisa acontece quando você executa `merge` de 2 branches.
+Quando executamos `git pull` enquanto existe uma diferença entre o _Local_ e o _Remote Repository_, a mesma coisa acontece quando executamos `merge` de 2 branches.
 
-Além disso, você pode pensar no relacionamento entre ramificações no _Remote_ e aquele no _Local Repository_ como um caso especial de criação de uma ramificação com base em outra.
+Além disso, podemos pensar no relacionamento entre ramificações no _Remote_ e aquele no _Local Repository_ como um caso especial de criação de uma ramificação com base em outra.
 Uma ramificação local é baseada no estado de uma ramificação no _Remote_ desde a última vez que você a buscou (`fetch`).
 
-Pensando assim, as duas opções que você possui para obter mudanças remotas fazem muito sentido:
+Pensando assim, as duas opções que possuímos para obter mudanças remotas fazem muito sentido:
 
-Quando você executa `git pull`, as versões _Local_ e _Remote_ de um ramo serão mescladas (`merge`). Assim como mesclagem de branches isso apresentará um commit de _merge_.
+Quando executamos `git pull`, as versões _Local_ e _Remote_ de um ramo serão mescladas (`merge`). Assim como a mesclagem de branches isso apresentará um commit de _merge_.
 
-Como qualquer ramificação _local_ é baseada em sua respectiva versão _remote_, também podemos executar `rebase`, para que qualquer alteração que possamos ter feito localmente apareçam como se fossem baseadas na versão mais recente disponível no _Remote Repository_.
+Como qualquer ramificação _local_ é baseada na sua respectiva versão _remote_, também podemos executar `rebase`, para que qualquer alteração que possamos ter feito localmente apareçam como se fossem baseadas na versão mais recente disponível no _Remote Repository_.
 Para fazer isso, podemos usar `git pull --rebase` (ou a abreviação `git pull -r`).
 
-Conforme detalhado na seção [Rebasing](#rebasing), há um benefício em manter um histórico linear limpo, e é por isso que eu recomendo fortemente que sempre que você for executar `git pull`, execute como `git pull -r`.
+Conforme detalhado na seção [Rebasing](#rebasing), há um benefício em manter um histórico linear limpo, e é por isso que recomendo fortemente, o de sempre que executarmos `git pull`, execute como `git pull -r`.
 
-> Você também pode dizer ao git para usar `rebase` em vez de `merge` como estratégia padrão quando executar `git pull`, configurando a configuração `pull.rebase` com um comando como este: `git config --global pull.rebase true`.
+> Também podemos dizer ao git para usar `rebase` em vez de `merge` como uma estratégia padrão quando executarmos `git pull`, "configurando a configuração" `pull.rebase` com um comando como este: `git config --global pull.rebase true`.
 
-Se você ainda não executou o `git pull` quando o mencionei há alguns parágrafos atrás, agora vamos executar o `git pull -r` para obter as mudanças remotas, fazendo parecer que nosso novo commit aconteceu depois delas.
+Se ainda não executou o `git pull` quando o mencionei há alguns parágrafos atrás, agora vamos executar o `git pull -r` para obter as mudanças remotas, fazendo parecer que os nossos novos commits aconteceram depois delas.
 
-Obviamente, como em uma `rebase` normal (ou `merge`) você terá que resolver o conflito que introduzimos para que o `git pull` finalize.
+Obviamente, como em uma `rebase` normal (ou `merge`) teremos que resolver o conflito que introduzimos para que o `git pull` finalize.
 
 ## Cherry-picking
 
-> Parabéns! Você chegou aos recursos mais avançados!
+> Parabéns! Chegamos aos recursos mais avançados!
 
-> Agora você entende como usar todos os comandos git típicos e, mais importante, como eles funcionam.
+> Agora seremos capazes de entendermos como usar todos os comandos git típicos e, mais importante, como eles funcionam.
 >
 > Esperamos que isso torne os conceitos a seguir muito mais simples de entender do que se eu tivesse acabado de dizer quais comandos digitar.
 >
 > Então, vamos direto ao assunto e aprender fazer `cherry-pick` de commits!
 
-> _Curiosidade:_ A tradução de `cherry-pick` é colher cereja.
+> _Curiosidade:_ A tradução de `cherry-pick` é "colher cereja".
 
-Você ainda se lembra mais ou menos do que um `commit` é feito, certo?
+Consegue lembrar do que um `commit` é feito, certo?
 
-E como seus commits são aplicados como novos commits, com o mesmo _change set_ e _message_ quando você faz o [`rebase`](#rebasing) de uma branch?
+Como os seus commits são aplicados como novos commits, com o mesmo _change set_ e _message_ quando fazemos o: [`rebase`](#rebasing) de uma branch?
 
-Sempre que você quiser apenas fazer algumas alterações de uma branch e aplicá-las a outra branch, você precisa fazer `cherry-pick` desses commits e colocá-los em sua branch.
+Sempre que quiser fazer algumas alterações de uma branch e aplicá-las a outra branch, precisamos do `cherry-pick` desses commits e colocá-los na sua branch.
 
-É exatamente isso que o `git cherry-pick` permite que você faça com commits isolados ou com um agrupado de commits.
+É exatamente isso que o `git cherry-pick` permite que façamos com os commits isolados ou com um agrupado de commits.
 
-Assim como durante um `rebase`, isso realmente colocará as alterações desses commits em um novo commit em sua branch atual.
+Assim como durante um `rebase`, isso realmente colocará as alterações desses commits num novo commit na sua branch atual.
 
 Vamos dar uma olhada nos exemplos de cada `cherry-pick` com um ou mais commits.
 
-A figura abaixo mostra três branches antes de fazermos qualquer coisa. Vamos supor que realmente queremos obter algumas mudanças da branch `add_patrick` na branch `change_alice`. Infelizmente, eles ainda não entraram no master, portanto, não podemos apenas executar `rebase` na master para obter essas alterações (juntamente com outras alterações na outra branch, que talvez nem desejemos).
+A figura abaixo mostra três branches antes de fazermos qualquer coisa. Vamos supor que realmente queremos obter algumas mudanças da branch `add_patrick` na branch `change_alice`. Infelizmente, eles ainda não entraram no master, portanto, não podemos apenas executar `rebase` na master para obter essas alterações (com outras alterações na outra branch, que talvez nem desejemos).
 
 <!-- cherry_branches.png -->
 ![Branches antes do cherry-pick](https://user-images.githubusercontent.com/29241659/87479595-28810600-c602-11ea-9a0e-dd9eb7a81d29.png)
 
 Então vamos fazer `git cherry-pick` do commit _63fc421_.
-A figura abaixo mostra o que acontece quando executamos `git cherry-pick 63fc421`
+A figura abaixo mostra o que acontece quando executamos: `git cherry-pick 63fc421`
 
 <!-- cherry_pick.png -->
 ![Cherry-pick de um único commit](https://user-images.githubusercontent.com/29241659/87479601-2a4ac980-c602-11ea-8591-6763c088c75a.png)
 
-Como você pode ver, um novo commit com as alterações que queríamos aparece na branch.
+Como podemos ver, um novo commit com as alterações que queríamos, irá aparecer na branch.
 
 > Neste ponto observe que, como qualquer outro tipo de alteração de uma branch que já vimos antes, qualquer conflito que ocorra durante um `cherry-pick` precisará ser resolvido por nós, antes que o comando possa ser executado.
 >
-> Como todos os outros comandos, você pode continuar (`--continue`) um `cherry-pick` quando resolver os conflitos, ou abortar (`--abort`) o comando por completo.
+> Como todos os outros comandos, podemos continuar (`--continue`) um `cherry-pick` quando resolver os conflitos, ou abortar (`--abort`) o comando por completo.
 
-A figura abaixo mostra um `cherry-pick` de um conjunto de commits em vez de um único. Você pode simplesmente fazer isso chamando o comando no formato `git cherry-pick <from>..<to>` ou, no nosso exemplo abaixo, como `git cherry-pick 0cfc1d2..41fbfa7`.
+A figura abaixo mostra um `cherry-pick` de um conjunto de commits em vez de um único. Podemos simplesmente fazer isso chamando o comando no formato `git cherry-pick <from>..<to>` ou, no nosso exemplo abaixo, como `git cherry-pick 0cfc1d2..41fbfa7`.
 
 <!-- cherry_pick_range.png -->
 ![Cherry-pick de um conjunto de commits](https://user-images.githubusercontent.com/29241659/87479604-2c148d00-c602-11ea-9bff-20407bd7d876.png)
 
 ## Reescrevendo a história
 
-> Estou me repetindo agora, mas você ainda se lembra de [`rebase`](# rebasing) bem o suficiente, certo? Caso contrário, volte rapidamente para essa seção antes de continuar aqui, pois usaremos o que já sabemos enquanto aprendemos a mudar o histórico!
+> Mesmo me repetindo agora, você ainda se lembra de [`rebase`](# rebasing) bem o suficiente, certo? Caso contrário, volte rapidamente para essa seção antes de continuar aqui, porque usaremos o que já sabemos enquanto aprendemos a mudar o histórico!
 
-Como você sabe, um `commit` contém basicamente suas alterações, uma mensagem e algumas outras coisas.
+Como sabemos, um `commit` contém basicamente as suas alterações, uma mensagem e algumas outras coisas.
 
 A história de uma branch é composta por todos os seus commits.
 
-Mas digamos que você acabou de fazer um `commit` e, em seguida, observou que esqueceu de adicionar um arquivo ou que você cometeu um erro de digitação e a alteração deixou você com um código com bug.
+Mas digamos que acabamos de fazer um `commit` e, em seguida, observou que esqueceu de adicionar um arquivo ou que cometemos um erro de digitação e a alteração deixou você com um código com bug.
 
-Examinaremos brevemente duas coisas que poderíamos fazer para corrigir isso e fazer parecer que nunca aconteceu.
+Examinaremos brevemente duas coisas que poderíamos fazer para corrigir isso e parecer que nunca aconteceu.
 
 Vamos mudar para uma nova branch com `git checkout -b rewrite_history`.
 
@@ -714,41 +714,41 @@ Agora faça algumas alterações em `Alice.txt` e `Bob.txt` e, em seguida, execu
 
 Então faça o `commit` usando uma mensagem como "Essa é uma história" e pronto.
 
-Espere, eu disse que terminamos? Não, você verá claramente que cometemos alguns erros aqui:
+Espere, eu disse que terminamos? Não, veremos nitidamente que cometemos alguns erros aqui:
 
-* Nós esquecemos de adicionar as mudanças de `Bob.txt`
+* Esquecemos de adicionar as mudanças do: `Bob.txt`
 * Nós não escrevemos uma [boa mensagem de commit](https://chris.beams.io/posts/git-commit/)
 
 <!-- amending -->
 ### Alterando o último commit (Amend)
 Uma maneira de corrigir ambos os itens de uma só vez seria alterar (`amend`) o commit que acabamos de fazer.
 
-Alterar o último commit basicamente funciona como criar um novo.
+Alterar o último commit basicamente funciona como "criar um novo".
 
-Antes de fazer qualquer coisa, dê uma olhada no seu último commit, com `git show {COMMIT}`. Coloque o hash de confirmação (que você provavelmente ainda verá em sua linha de comando ao ter executado `git commit` ou no `git log`), ou apenas _HEAD_.
+Antes de fazer qualquer coisa, dê uma olhada no seu último commit, com `git show {COMMIT}`. Coloque o hash de confirmação (provavelmente veremos em sua linha de comando ao ter executado `git commit` ou no `git log`), ou apenas _HEAD_.
 
-Assim como no `git log`, você verá a mensagem, o autor, a data e, claro, as alterações.
+Assim como no `git log`, veremos a mensagem, o autor, a data e, claro, as alterações.
 
 Agora vamos alterar (`amend`) o que fizemos nesse commit.
 
 Execute `git add Bob.txt` para enviar as alterações para a _Staging Area_ e, em seguida, `git commit --amend`.
 
-O que acontece a seguir é o desenrolamr do commit, as novas alterações da _Staging Area_ adicionadas no commit existente e a abertura do editor da mensagem de commit.
+O que acontece a seguir é o desenrolar do commit, as novas alterações da _Staging Area_ adicionadas no commit existente e a abertura do editor da mensagem de commit.
 
-No editor, você verá a mensagem de commit anterior.
+No editor, veremos a mensagem de commit anterior.
 Sinta-se livre para alterá-lo para algo melhor.
 
 Depois que você terminar, dê uma olhada no último commit com `git show HEAD`.
 
-Como você certamente já esperava, o hash de confirmação é diferente. O commit original se foi e, em seu lugar, existe um novo, com as alterações combinadas e a nova mensagem de commit.
+Como certamente já esperava, o hash de confirmação é diferente. O commit original se foi e, no seu lugar, existe um novo, com as alterações combinadas e a nova mensagem de commit.
 
-> Observe como os outros dados de commit, como autor e data, não são alterados em relação ao commit original. Você pode mexer com eles também, se você realmente quiser, usando os sinalizadores extras `--author={AUTHOR}` e `--date={DATE}` ao alterar.
+> Observe como os outros dados de commit, como autor e data, não são alterados em relação ao commit original. Podemos mexer com eles também, se realmente quiser, usando os sinalizadores extras `--author={AUTHOR}` e `--date={DATE}` ao alterar.
 
-Parabéns! Você acabou de reescrever a história pela primeira vez!
+Parabéns! Acabamos de reescrever a história pela primeira vez!
 
 ### Rebase interativo
 <!-- squashing -->
-Geralmente, quando executamos `git rebase`, nós fazemos `rebase` em uma branch. Quando fazemos algo como `git rebase origin/master`, o que realmente acontece é um rebase no _HEAD_ dessa branch.
+Geralmente, quando executamos `git rebase`, fazemos `rebase` em uma branch. Quando fazemos algo como `git rebase origin/master`, o que realmente acontece é um rebase no _HEAD_ dessa branch.
 
 De fato, se quiséssemos, poderíamos fazer `rebase` em qualquer commit.
 
@@ -756,9 +756,9 @@ De fato, se quiséssemos, poderíamos fazer `rebase` em qualquer commit.
 
 Como muitos outros comandos, o `git rebase` possui um modo _interactive_.
 
-Diferente da maioria dos outros, o `rebase` _interativo_ é algo que você provavelmente estará usando muito, pois permite alterar o histórico o quanto quiser.
+Diferente da maioria dos outros, o `rebase` _interativo_ é algo que, provavelmente, será muito usado, porque permite alterar o histórico o quanto quiser.
 
-Especialmente se você seguir um fluxo de trabalho fazendo muitos pequenos commits de suas alterações, o que lhe permitirá voltar facilmente se cometer um erro,`rebase` interativo será o seu aliado mais próximo.
+Especialmente se você seguir um fluxo de trabalho fazendo vários pequenos commits nas suas alterações, o que lhe permitirá voltar facilmente se cometer um erro,`rebase` interativo será o seu aliado mais próximo.
 
 _Chega de conversa! Vamos fazer algo!_
 
@@ -770,9 +770,9 @@ Em seguida, faça `git commit` usando uma mensagem como "Adicionar texto em Alic
 
 Agora, em vez de alterar esse commit, execute `git add Bob.txt` e `git commit`. Como mensagem, usei "Adicionar Bob.txt".
 
-E para tornar as coisas mais interessantes, faremos outra alteração em `Alice.txt`, na qual faremos `git add` e `git commit`. Como mensagem, usei "Adicionar mais texto a Alice".
+Para tornar as coisas mais interessantes, faremos outra alteração em `Alice.txt`, na qual faremos `git add` e `git commit`. Como mensagem, usei `"Adicionar mais texto a Alice"`.
 
-Se agora analisarmos o histórico da branch com `git log` (ou apenas uma rápida olhada, de preferência com `git log --oneline`), veremos nossos três commits em cima do que estiver na sua _master_.
+Se agora analisarmos o histórico da branch com `git log` (ou apenas uma rápida olhada, de preferência com `git log --oneline`), veremos os nossos três commits em cima do que estiver na sua _master_.
 
 Para mim, aparece assim:
 ```ShellSession
@@ -784,16 +784,16 @@ df3ad1d (origin/master, origin/HEAD, master) Adicionar Alice
 800a947 Adicionar texto do tutorial
 ```
 
-Há duas coisas que gostaríamos de corrigir sobre isso, que, com o objetivo de aprender coisas diferentes, serão um pouco diferentes do que na seção anterior sobre `amend`:
+Há duas questões que gostaríamos de corrigir sobre isso, que com o objetivo de aprender coisas novas, serão um pouco diferentes do que na seção anterior sobre `amend`:
 
 * Coloque as duas alterações de `Alice.txt` em um único commit
-* Nomeie as coisas de forma consistente e remova o _.txt_ da mensagem sobre `Bob.txt`
+* Nomeie as coisas de forma consistente e remova o _.txt_ da mensagem sobre: `Bob.txt`
 
-Para alterar os três novos commits, queremos fazer um rebase no commit antes deles. Esse commit para mim é `df3ad1d`, mas também podemos referenciá-lo como o terceiro commit do atual _HEAD_ como `HEAD~3`
+Para alterar os três novos commits, queremos fazer um rebase no commit antes deles. Esse commit para mim, é `df3ad1d`, mas também podemos referenciá-lo como o terceiro commit do atual _HEAD_ como o: `HEAD~3`
 
 Para iniciar um `rebase` _interativo_, usamos `git rebase -i {COMMIT}`, então vamos executar `git rebase -i HEAD~3`
 
-O que você verá é o editor de sua escolha mostrando algo como isto:
+O que veremos é o editor da sua escolha mostrando algo como isto:
 
 ```bash
 pick 9e06fca Adicionar texto em Alice
@@ -820,15 +820,15 @@ pick 0b22064 Adicionar mais texto a Alice
 # Note that empty commits are commented out
 ```
 
-Observe que o `git` sempre explica tudo o que você pode fazer quando você chama o comando.
+Observe que o `git` sempre explica tudo o que podemos fazer quando chamamos o comando.
 
-Os comandos (_Commands_) que você provavelmente mais usará são `reword`, `squash` e `drop`. (E `pick`, mas esse está lá por padrão)
+Os comandos (_Commands_) que provavelmente será mais usados são `reword`, `squash` e `drop`. (E `pick`, mas esse está lá por padrão)
 
-Reserve um momento para pensar sobre o que você vê e o que vamos usar para alcançar nossos dois objetivos de cima. Eu vou esperar.
+Reserve um momento para pensar sobre o que vimos e o que vamos usar para alcançar os nossos dois objetivos de cima. Vamos aguardar.
 
 Tem um plano? Perfeito!
 
-Antes de começarmos a fazer alterações, observe que os commits são listados do mais antigo para o mais novo e, portanto, na direção oposta à saída do `git log`.
+Antes de começarmos as alterações, observe que os commits são listados do mais antigo para o mais novo, portanto, na direção oposta à saída do `git log`.
 
 Vou começar com a alteração fácil e fazer com que possamos alterar a mensagem do commit do meio.
 
@@ -854,7 +854,7 @@ squash 0b22064 Adicionar mais texto a Alice
 [...]
 ```
 
-Nós terminamos? Isso fará o que queremos?
+Será que terminamos? Isso fará o que queremos?
 
 Não vai, né? Como os comentários no arquivo nos dizem:
 
@@ -866,9 +866,9 @@ Portanto, o que fizemos até agora mesclará (merge) as alterações do segundo 
 
 Outra coisa poderosa que podemos fazer em um `rebase` _interativo_ é mudar a ordem dos commits.
 
-Se você leu com atenção o que os comentários disseram, você já sabe como: Simplesmente mova as linhas!
+Se conseguiu ler com atenção o que os comentários disseram, sabemos como: "Simplesmente mova as linhas!"
 
-Felizmente, você está no seu editor de texto favorito, então vá em frente e mova o segundo commit Alice para ficar logo após o primeiro.
+Felizmente, estamos no editor de texto favorito, então vá em frente e mova o segundo commit Alice para ficar logo após o primeiro.
 
 ```bash
 pick 9e06fca Adicionar texto em Alice
@@ -881,19 +881,19 @@ reword 062ef13 Adicionar Bob.txt
 
 Isso deve funcionar, então feche o editor e diga ao `git` para começar a executar os comandos.
 
-O que acontece a seguir é como uma `rebase` normal: começando com o commit que você referenciou no início, cada um dos commits que você listou será aplicado um após o outro.
+O que acontece a seguir é como uma `rebase` normal: começando com o commit que referenciamos no início, cada um dos commits que listamos será aplicado um após o outro.
 
-> Neste momento isso não acontecerá, mas quando você reordenar as alterações do código, poderá ocorrer que você entre em conflito durante o `rebase`. Afinal, você possivelmente misturou as mudanças que estavam desenvolvendo.
+> Agora isso não acontecerá, mas quando reordenar as alterações do código, poderá ocorrer que entre em conflito durante o `rebase`. Afinal, possivelmente misturou as mudanças que desenvolvemos.
 >
-> Apenas [resolva](#resolvendo-conflitos) eles como faria normalmente.
+> Apenas [resolva](#resolvendo-conflitos) como fariam normalmente.
 
-Após aplicar o primeiro commit, o editor abrirá e permitirá que você coloque uma nova mensagem para o commit combinando as alterações em `Alice.txt`. Joguei fora o texto dos dois commits e coloquei "Adicionar vários textos importantes em Alice".
+Após aplicar o primeiro commit, o editor abrirá e permitirá que coloquemos uma nova mensagem para o commit combinando as alterações em `Alice.txt`. Joguei fora o texto dos dois commits e coloquei "Adicionar vários textos importantes em Alice".
 
-Depois de fechar o editor para concluir o commit, ele será aberto novamente para permitir que você altere a mensagem do commit `Adicionar Bob.txt`. Remova o ".txt" e continue fechando o editor.
+Depois de fechar o editor para concluir o commit, ele será aberto novamente para permitir que altere a mensagem do commit `Adicionar Bob.txt`. Remova o ".txt" e feche o editor.
 
-É isso aí! Você reescreveu a história novamente. Desta vez, muito mais substancialmente do que quando utilizamos `amend`!
+É isso aí! Reescrevemos a história novamente. Desta vez, muito mais substancialmente do que quando utilizamos `amend`!
 
-Se você olhar o `git log` novamente verá que há dois novos commits no lugar dos três que tínhamos anteriormente. Mas agora você já está acostumado com o que o `rebase` faz com commits e estava esperando por isso.
+Se você olhar o `git log` novamente verá que há dois novos commits no lugar dos três que tínhamos anteriormente. Mas já acostumamos com o que o `rebase` faz com commits e esperamos por isso.
 
 ```
 > git log --oneline
@@ -906,81 +906,85 @@ df3ad1d (origin/master, origin/HEAD, master) Adicionar Alice
 <!-- changing meta data?>
 
 <!-- force pushing -->
-### História pública, por que você não deve reescrevê-la e como fazer isso com segurança
+### História pública, por que não devemos reescrevê-las e como fazer isso com segurança
 
-Como observado anteriormente, a alteração do histórico é uma parte incrivelmente útil de qualquer fluxo de trabalho que envolve fazer muitos pequenos commit enquanto você trabalha.
+Como observado anteriormente, a alteração do histórico é uma parte incrivelmente útil de qualquer fluxo de trabalho que envolve fazer muitos pequenos commit enquanto trabalhamos.
 
-Embora todas as pequenas alterações atômicas tornem muito fácil para você, por exemplo, verificar se a cada alteração que seu conjunto de testes ainda passa e, se não, remover ou emendar apenas essas alterações específicas, os 100 commits que você fez para escrever `HelloWorld.java` provavelmente não são algo que você deseja compartilhar com as pessoas .
+Embora todas as pequenas alterações atômicas tornem muito fácil para você, por exemplo, verificar se a cada alteração que o seu conjunto de testes ainda passa e, se não, remover ou emendar apenas essas modificações específicas, os 100 commits que fizemos para escrever `HelloWorld.java` provavelmente não serão algo que desejamos compartilhar com as pessoas .
 
-Muito provavelmente o que você deseja compartilhar com eles são algumas alterações bem-formadas, com boas mensagens de commit, informando aos colegas o que você fez por qual motivo.
+Muito provavelmente o que desejamos compartilhar com eles são algumas alterações bem-formadas, com boas mensagens de commit, informando aos colegas o que fizemos e por qual motivo.
 
-Enquanto todos esses pequenos commits existirem apenas no seu _Dev Environment_, você estará perfeitamente seguro para fazer um `git rebase -i` e alterar o histórico para o conteúdo do seu coração.
+Enquanto todos esses pequenos commits existirem apenas no seu _Dev Environment_, estaremos perfeitamente seguros para fazermos um `git rebase -i` e alterarmos o histórico para o conteúdo do seu coração.
 
-As coisas ficam problemáticas quando se trata de mudar a _história pública_. Isso significa qualquer coisa que já tenha chegado ao _Remote Repository_.
+As coisas ficam problemáticas quando se trata de mudar a _história pública_. Isso significa que qualquer coisa que já tenha chegado ao _Remote Repository_.
 
-Nesse ponto, tornou-se público e as branches de outras pessoas podem se basear nessa história. Isso realmente faz com que você geralmente não queira mexer.
+Nesse ponto, tornou-se público e as branches de outras pessoas podem se basear nessa história. Isso realmente faz com que, geralmente, não queiramos mexer.
 
-O conselho usual é "nunca reescrever a história pública!" e enquanto repito isso aqui, devo admitir que há uma quantidade decente de casos em que você ainda pode reescrever a _história pública_.
+O conselho usual é "**nunca reescrever a história pública!**" e enquanto repito isso aqui, devo admitir que há uma quantidade decente de casos em que ainda podemos reescrever a _história pública_.
 
-Em todos esses casos, a história não é "realmente" pública. Você certamente não deseja reescrever o histórico na branch _master_ de um projeto de código aberto, ou algo como a branch _release_ da sua empresa.
+Em todos esses casos, a história não é "realmente" pública. Certamente não desejamos reescrever o histórico na branch _master_ de um projeto de código aberto, ou algo como a branch _release_ da sua empresa.
 
-Onde você pode querer reescrever a história são branches que você empurrou (`push`) apenas para compartilhar com alguns colegas.
+Onde queremos reescrever a história são branches que "empurramos" (`push`) apenas para compartilhar com alguns colegas.
 
-Você pode estar desenvolvendo em trunk-based, mas deseja compartilhar algo que ainda não é compilado, portanto, obviamente, não deseja colocar isso na branch principal conscientemente.
-Ou você pode ter um fluxo de trabalho no qual compartilha branch de feature.
+Ao desenvolver em trunk-based, queremos compartilhar algo que ainda não é compilado, portanto, obviamente, não desejamos colocar isso na branch principal conscientemente.
+Podemos ter um fluxo de trabalho no qual compartilhamos a branch de feature.
 
-Especialmente com as branches de feature, espero que você faça `rebase` com freqüência no _master_ atual. Mas, como sabemos, um `git rebase` adiciona os commits de nossas branches à medida que novos commits se baseiam naquilo em que os baseamos. Isso reescreve a história. E, no caso de uma branch de feature compartilhada, ele reescreve a _história pública_.
+Especialmente com as branches de feature, esperam que façamos o `rebase` com frequência na _master_ atual. Mas, como sabemos, um `git rebase` adiciona os commits das nossas branches a medida que os novos commits se baseiam naquilo em que os baseamos.
 
-Então, o que devemos fazer se seguirmos o mantra "Nunca reescrever a história pública"?
+Isso reescreve a história. No caso de uma branch de feature compartilhada, ele reescreve a _história pública_.
 
-Nunca fazer rebase da nossa branch e esperar que ele ainda mergeie com a _master_ no final?
+Então, o que devemos fazer se seguirmos o mantra de `"Nunca reescrever a história pública"`?
 
-Não usar branches de features compartilhadas?
+Nunca fazermos o `rebase` da nossa branch e esperar que ele ainda "mergeie" com a _master_ no final?
 
-É certo que o segundo é realmente uma resposta razoável, mas você ainda não pode fazer isso. Portanto, a única coisa que você pode fazer é aceitar reescrever a _história pública_ e empurrar (`push`) o histórico alterado para o _Remote Repository_.
+Não usarmos branches de features compartilhadas?
 
-Se você fizer um `git push`, você será notificado de que não está autorizado a fazer isso, pois sua branch _local_ divergiu da _remote_.
+É certo que o segundo realmente tem uma resposta razoável, mas não podemos fazer isso (ainda!).
 
-Você precisará forçar (`force`) o envio das alterações e substituir o remoto pela sua versão local.
+Portanto, a única coisa que podemos fazer é aceitar reescrever a _história pública_ e empurrar (`push`) o histórico alterado para o _Remote Repository_.
 
-Como destaquei isso de forma sugestiva, você provavelmente está pronto para tentar o `git push --force` no momento. Você realmente não deveria fazer isso se quiser reescrever a _história pública_ em segurança!
+Se fizermos um `git push`, seremos notificados de que não estamos autorizados a fazer isso, porque a sua branch _local_ divergiu da _remote_.
 
-Você está muito melhor usando o irmão mais cuidadoso do `--force`, `--force-with-lease`!
+Precisaremos forçar (`force`) o envio das alterações e substituir o remoto pela sua versão local.
+
+Como destaquei isso de forma sugestiva, provavelmente estamos prontos para tentar o `git push --force` no momento. Realmente não deveríamos fazer isso se quisermos reescrever a _história pública_ em segurança!
+
+Estamos muito melhor usando o irmão mais cuidadoso do `--force`, `--force-with-lease`!
 
 O `--force-with-lease` irá verificar se a sua versão _local_ da branch _remote_ e o atual _remote_ correspondem, antes de fazer o `push`.
 
-Com isso, você pode garantir que não irá apagar acidentalmente nenhuma alteração que alguém possa ter dado `push` enquanto você reescreveu o histórico!
+Com isso, podemos garantir que não iremos apagar acidentalmente nenhuma alteração que alguém possa ter dado `push` enquanto reescrevemos o histórico!
 
 <!-- force_push.png -->
 ![O que acontece com push --force-with-lease](https://user-images.githubusercontent.com/29241659/87479653-3cc50300-c602-11ea-9b1f-4044c7a655aa.png)
 
-E nessa nota, deixarei você com um mantra ligeiramente alterado:
+Essa nota, deixarei você com um mantra ligeiramente alterado:
 
-_Não reescreva o histórico público, a menos que tenha certeza do que está fazendo. E se você o fizer, esteja seguro e force-with-lease._
+_Não reescreva o histórico público, a menos que tenha certeza do que fazer. E, se você o fizer, esteja seguro e use o force-with-lease._
 
 ## Lendo a história
 
-Conhecendo as diferenças entre as áreas em seu _Dev Environment_ - especialmente o _Local Repository_ - e como os commits e o histórico funcionam, fazer um `rebase`não deve ser assustador para você.
+Conhecendo as diferenças entre as áreas no seu _Dev Environment_ - especialmente o _Local Repository_ - e como os commits e o histórico funciona, fazer um `rebase`não deve ser assustador para você.
 
-Mesmo assim, as vezes as coisas dão errado. Você pode ter feito um `rebase` e acidentalmente aceitado a versão errada do arquivo ao resolver um conflito.
+Mesmo assim, as vezes as coisas dão errado. Podemos ter feito um `rebase` e acidentalmente aceitado a versão errada do arquivo ao resolver um conflito.
 
-Agora, em vez do recurso que você adicionou, apenas os seus colegas adicionaram a linha de logon em um arquivo.
+Agora, em vez do recurso que adicionamos, apenas os seus colegas adicionaram a linha de logon num arquivo.
 
 Felizmente o `git` está ao seu lado por ter um recurso de segurança interno chamado logs de referência (_Reference Logs_), também conhecido como `reflog`.
 
 Sempre que qualquer _referência_ como a ponta de uma branch é atualizada no seu _Local Repository_, uma entrada no _Log de Referência_ é adicionada.
 
-Portanto, há um registro de qualquer momento em que você faz um `commit`, mas também de quando você redefiniu (`reset`) ou moveu o `HEAD` etc.
+Portanto, há um registro de qualquer momento em que se faz um `commit`, mas também de quando redefinimos um (`reset`) ou movemos o `HEAD` etc.
 
-Depois de ler este tutorial até agora, você vê como isso pode ser útil quando estragamos um `rebase`, certo?
+Depois de ler este tutorial até agora, veremos como isso pode ser útil quando estragamos um `rebase`, certo?
 
-Sabemos que um `rebase` move o `HEAD` da nossa branch até o ponto em que o baseamos e aplica nossas alterações. Um `rebase` interativo funciona da mesma forma, mas pode fazer coisas com esses commits como _squashing_ ou _rewording_ eles.
+Sabemos que um `rebase` move o `HEAD` da nossa branch até o ponto em que o baseamos e aplicamos as nossas alterações. Um `rebase` interativo funciona da mesma forma, porém podemos fazer coisas com esses commits como _squashing_ ou _rewording_ eles.
 
-Se você ainda não está na branch em que praticamos o [rebase interativo](#rebase-interativo), mude para ela novamente, pois estamos prestes a praticar um pouco mais lá.
+Se ainda não estamos na branch em que praticamos o [rebase interativo](#rebase-interativo), basta mudar para ela novamente e estamos prestes a praticar um pouco mais lá.
 
-Vamos dar uma olhada no `reflog` das coisas que fizemos nessa branch - você adivinhou como - executando o `git reflog`.
+Vamos dar uma olhada no `reflog` das coisas que fizemos nessa branch - _você adivinhou como_ - executando o `git reflog`.
 
-Você provavelmente verá muita informação na saída, mas as primeiras linhas na parte superior devem ser semelhantes a esta:
+Provavelmente veremos muita informação na saída, mas as primeiras linhas na parte superior devem ser próximas a esta:
 
 ```bash
 > git reflog
@@ -998,23 +1002,21 @@ Aí está. Tudo o que fizemos, desde a mudança para a branch até o `rebase`.
 
 É muito legal ver as coisas que fizemos, mas inútil por si só se erramos em algum lugar, se não fosse pelas referências no início de cada linha.
 
-Se você comparar a saída de `reflog` com a última vez que examinamos o `log`, verá esses pontos relacionados às referências de commit, e podemos usá-las dessa maneira.
+Se compararmos a saída de `reflog` com a última vez que examinamos o `log`, veremos esses pontos relacionados às referências de commit, e podemos usá-las dessa maneira.
 
 Digamos que realmente não quiséssemos fazer o rebase. Como nos livramos das alterações feitas?
 
-Nós movemos o `HEAD` para o ponto anterior ao `rebase` iniciado com um `git reset 0b22064`.
+Movemos o `HEAD` para o ponto anterior ao `rebase` iniciado com um `git reset 0b22064`.
 
-> `0b22064` é o commit antes de `rebase` no meu caso. De um modo mais geral, você também pode fazer referência a ele como _HEAD de quatro mudanças atrás_ via `HEAD@{4}`. Observe que, se você tiver alternado entre as branches ou tiver feito alguma outra coisa que crie uma entrada de log, poderá ter um número maior lá.
+> `0b22064` é o commit antes de `rebase` no meu caso. De um modo mais geral, também podemos referir-se a ele como _HEAD de quatro mudanças atrás_ via `HEAD@{4}`. Observe que, se tivermos alternado entre as branches ou tiver feito alguma outra coisa que crie uma entrada de log, poderá ter um número maior lá.
 
-Se você der uma olhada no `log` agora, verá o estado original com três commits individuais restaurados.
+Se dermos uma olhada no `log` agora, veremos o estado original com três commits individuais restaurados.
 
 Mas digamos que agora percebemos que não era isso que queríamos. O `rebase` está bom, nós simplesmente não gostamos de como mudamos a mensagem do commit de Bob.
 
-Nós poderíamos simplesmente fazer outro `rebase -i` no estado atual, exatamente como fizemos originalmente.
+Poderíamos simplesmente fazer outro `rebase -i` no estado atual, exatamente como fizemos originalmente ou usarmos o `reflog` para voltarmos depois do `rebase` e alteramos o commit a partir daí com `amend`.
 
-Ou usamos o reflog e voltamos para depois do rebase e alteramos o commit a partir daí com `amend`.
-
-Mas agora você já sabe como fazer isso, então deixarei você tentar por conta própria. Além disso, você também sabe que existe o `reflog` que permite desfazer a maioria das coisas que você pode acabar fazendo por engano.
+Mas agora sabemos como fazer isso, então tentem por conta própria. Além disso, também sabemos que existe o `reflog` que permite desfazer a maioria das coisas que podemos fazer por engano.
 
 ## Treinando comandos git
 
