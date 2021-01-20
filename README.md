@@ -47,6 +47,7 @@ Vamos começar!
     - [Rebase interativo](#rebase-interativo)
     - [História pública, por que você não deve reescrevê-la e como fazer isso com segurança](#história-pública-por-que-você-não-deve-reescrevê-la-e-como-fazer-isso-com-segurança)
 - [Lendo a história](#lendo-a-história)
+- [Treinando comandos git](#treinando--comandos-git)
 ---
 
 ## Visão geral
@@ -1012,6 +1013,24 @@ Nós poderíamos simplesmente fazer outro `rebase -i` no estado atual, exatament
 Ou usamos o reflog e voltamos para depois do rebase e alteramos o commit a partir daí com `amend`.
 
 Mas agora você já sabe como fazer isso, então deixarei você tentar por conta própria. Além disso, você também sabe que existe o `reflog` que permite desfazer a maioria das coisas que você pode acabar fazendo por engano.
+
+## Treinando comandos git
+
+O site [try github](http://try.github.io/), precisa de apenas **15 minutos** para aprendermos **Git**.
+
+Ignorando uma possível instalação do git e utilizando de um `prompt de comando` com controle de versão direto do seu navegador.
+ 
+O Try Git, de forma prática e rápida, acaba por facilitar todo o fluxo de aprendizagem do Git.
+
+Mesmo utilizando de linhas de comando, o Try Git vem com diversas instruções de _passo a passo_ além de toda a representação visual de um repositório Git.
+
+Com essas instruções, é possível notarmos algumas _dicas e truques_ para serem aplicados ao Git.
+
+###### Que tal analisarmos?
+
+> dica:
+
+O **Try Git** também se integra perfeitamente ao **GitHub** via OAuth e é possível enviarmos os nossos repositórios de aprendizagem/tutorial para conta GitHub como um repo chamado `try_git`.
 
 ---
 
