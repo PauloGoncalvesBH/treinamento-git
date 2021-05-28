@@ -1,15 +1,2 @@
-<<<<<<< HEAD
-Oi! Eu sou Alice. Sou um arquivo que alguém adicionou neste repositório há um bom tempo.
-<<<<<<< HEAD
-Nova linha para Alice.
-=======
-<<<<<<< Updated upstream
-Oi! Eu sou Alice. Sou um arquivo que alguém adicionou neste repositório há um bom tempo.
-=======
 Oi! Eu sou Alice. Sou um arquivo que alguém adicionou neste repositório há um bom tempo.
 Nova linha para Alice.
-Terceira linha para Alice.
->>>>>>> Stashed changes
->>>>>>> change_alice
-=======
->>>>>>> 6e6a3533378a4d15c688c21b2691e713858fa8bc
