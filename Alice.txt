@@ -1,1 +1,7 @@
+<<<<<<< Updated upstream
 Oi! Eu sou Alice. Sou um arquivo que alguém adicionou neste repositório há um bom tempo.
+=======
+Oi! Eu sou Alice. Sou um arquivo que alguém adicionou neste repositório há um bom tempo.
+Nova linha para Alice.
+Terceira linha para Alice.
+>>>>>>> Stashed changes
