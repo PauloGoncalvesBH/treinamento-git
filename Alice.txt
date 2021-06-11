@@ -1,2 +1,2 @@
 Oi! Eu sou Alice. Sou um arquivo que alguém adicionou neste repositório há um bom tempo.
-Agora tem amis um arquivo comigo, Bob.txt.
+Agora tem mais um arquivo comigo, Bob.txt.
