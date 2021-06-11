@@ -3,4 +3,8 @@ Agora tem mais um arquivo comigo, Bob.txt.
 Terceira linha adicionada.
 Quarta linha adicionada.
 Fiz uma mudança diretamente pelo github.
+<<<<<<< Updated upstream
 Nova alteração diretamente pelo github.
+=======
+Esse arquivo está começando a ficar grande.
+>>>>>>> Stashed changes
