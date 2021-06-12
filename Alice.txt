@@ -5,4 +5,5 @@ Quarta linha adicionada.
 Fiz uma mudança diretamente pelo github.
 Nova alteração diretamente pelo github.
 Esse arquivo está começando a ficar grande.
-ALteração apra gerar conflito.
+Alteração para gerar conflito.
+Inclusão da linha 9.
