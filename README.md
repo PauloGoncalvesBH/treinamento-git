@@ -438,7 +438,7 @@ Ainda lembramos que uma branch é sempre baseada em outra. Quando você a cria, 
 
 No nosso exemplo de mesclagem simples, ramificamos a _master_ em um commit específico e, em seguida, fizemos commit de algumas mudanças no _master_ e na branch `change_alice`.
 
-Quando uma ramificação está divergindo daquela em que se baseia e você deseja integrar as alterações mais recentes em sua ramificação atual, o `rebase` oferece uma maneira mais limpa de fazer isso do que uma `mesclagem` faria.
+Quando uma ramificação está divergindo daquela em que se baseia e você deseja integrar as alterações mais recentes em sua ramificação atual, o `rebase` oferece uma maneira mais limpa de fazer isso do que uma mesclagem (`merge`) faria.
 
 Como vimos, um `merge` introduz um _merge commit_ no qual os dois históricos são integrados novamente.
 
