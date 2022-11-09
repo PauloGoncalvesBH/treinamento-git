@@ -16,7 +16,7 @@ name = "Matheus Felipe"
 age = 22
 diferenca = 4
 frase = name + "tem {} anos de idade é {} anos mais novo q sua irmã"
-lista = ["Gangplank", "Veigar", "Norra", "Sejuani", "Twisted Fate"]
+lista = ["Gangplank", "Veigr", "Norra", "Sejuani", "Twisted Fate"]
 tupla = ("Matheus Felipe", 22, "Cariacica", "Santa Barbara", 130)
 personagensFavoritos = {"Veigar", "Ziggs", "Vex"}
 
