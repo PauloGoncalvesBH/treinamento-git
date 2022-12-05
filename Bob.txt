@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Oi!! Eu sou o Bob. Estou aqui há um tempo.
+=======
+Oi! Eu sou o Bob. Eu sou novo aqui.
+>>>>>>> branch_do_bobby
