@@ -1,3 +1,4 @@
 Oi! Eu sou Alice. Sou um arquivo que alguém adicionou neste repositório há um bom tempo.
-Inserindo um nova linha.Inserindo nova linha no arquivo alice.txt
-\n outra linha no arquivo alice.txt
+Inserindo um nova linha.
+Inserindo nova linha no arquivo alice.txt
+Inserindo um terceira linha!
