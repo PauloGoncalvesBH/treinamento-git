@@ -3,3 +3,4 @@ Inserindo um nova linha.
 Ajuste para teste do rebase.
 Alterando arquivo após stash
 nova modificação para teste de rebase
+nova alteração para alice.txt
