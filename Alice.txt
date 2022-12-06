@@ -1,3 +1,4 @@
 Oi! Eu sou Alice. Sou um arquivo que alguém adicionou neste repositório há um bom tempo.
 Inserindo um nova linha.
 Ajuste para teste do rebase.
+Alterando arquivo após stash
