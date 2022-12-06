@@ -2,3 +2,4 @@ Oi! Eu sou Alice. Sou um arquivo que alguém adicionou neste repositório há um
 Inserindo um nova linha.
 Ajuste para teste do rebase.
 Alterando arquivo após stash
+nova modificação para teste de rebase
