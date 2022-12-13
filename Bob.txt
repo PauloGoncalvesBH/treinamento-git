@@ -1,6 +1,3 @@
 Oi! Eu sou o Bob. Eu sou novo aqui.
-<<<<<<< HEAD
 Oi!! Eu sou o Bob. Estou aqui há um tempo.
-=======
 teste de rebase em bob.txt
->>>>>>> nova_branch
